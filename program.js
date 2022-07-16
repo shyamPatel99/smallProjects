@@ -3,7 +3,20 @@ let operation = prompt("Please enter operation you want to perform : ", "e.g /")
 if(number == "") console.log();
 if(number.length == 1) console.log(number);
 
-arr = number.split(",");
+let arr = "";
+for(let i=0; i<number.length; i++) {
+    if(number[i] == '\\') {
+        arr += ",";
+        i++;
+        continue;
+    }
+    arr += number[i];
+}
+if(arr[arr.length-1] == ',') {
+    arr = arr.slice(0,-1);     
+}
+
+arr = arr.split(",");
 
 switch(operation) {
   case '+':
