@@ -6,6 +6,10 @@ if(number.length == 1) console.log(number);
 let arr = "";
 for(let i=0; i<number.length; i++) {
     if(number[i] == '\\') {
+	if(number[i-1] == ',') {
+	  i++;
+	  continue;
+	}
         arr += ",";
         i++;
         continue;
